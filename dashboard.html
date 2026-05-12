@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div style="width:100%;">
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<h1 style="font-size:30px;">
+
+<i class="fa-solid fa-blog"></i>
+
+Blog Dashboard
+
+</h1>
+
+<div>
+
+<a href="/create_post">
+
+<i class="fa-solid fa-square-plus"></i>
+
+Create Post
+
+</a>
+
+<a href="/logout">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</div>
+
+</div>
+
+<!-- WELCOME -->
+
+<div class="center">
+
+<h2 style="color:white; margin-bottom:30px;">
+
+<i class="fa-solid fa-hand"></i>
+
+Welcome {{ session.username }}
+
+</h2>
+
+</div>
+
+<!-- POSTS -->
+
+{% for post in posts %}
+
+<div class="post-card">
+
+<h2>
+
+<i class="fa-solid fa-pen"></i>
+
+{{ post[1] }}
+
+</h2>
+
+<p>
+
+<i class="fa-solid fa-align-left"></i>
+
+{{ post[2] }}
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-user"></i>
+
+Author : {{ post[4] }}
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-calendar"></i>
+
+{{ post[3] }}
+
+</p>
+
+<hr style="margin:15px 0;">
+
+<div style="display:flex; gap:20px;">
+
+<a href="/post/{{ post[0] }}">
+
+<i class="fa-solid fa-eye"></i>
+
+View
+
+</a>
+
+<a href="/edit_post/{{ post[0] }}">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+Edit
+
+</a>
+
+<a href="/delete_post/{{ post[0] }}">
+
+<i class="fa-solid fa-trash"></i>
+
+Delete
+
+</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

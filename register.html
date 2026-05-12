@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Register</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+
+<i class="fa-solid fa-user-plus"></i>
+
+Register
+
+</h1>
+
+<form method="POST">
+
+<div class="input-box">
+
+<i class="fa-solid fa-user"></i>
+
+<input type="text"
+name="username"
+placeholder="Enter Username"
+required>
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<input type="email"
+name="email"
+placeholder="Enter Email"
+required>
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-lock"></i>
+
+<input type="password"
+name="password"
+placeholder="Enter Password"
+required>
+
+</div>
+
+<button type="submit">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+Register
+
+</button>
+
+</form>
+
+<div class="center">
+
+<a href="/login">
+
+Already have account? Login
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

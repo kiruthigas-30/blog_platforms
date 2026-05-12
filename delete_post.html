@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Delete Post</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 style="color:white;">
+
+<i class="fa-solid fa-trash"></i>
+
+Delete Post
+
+</h1>
+
+<div style="
+background:rgba(255,255,255,0.15);
+padding:25px;
+border-radius:20px;
+margin-top:20px;
+text-align:center;
+color:white;
+">
+
+<h2>
+
+<i class="fa-solid fa-circle-exclamation"></i>
+
+Are You Sure?
+
+</h2>
+
+<p style="margin-top:15px; line-height:1.8;">
+
+This post will be permanently deleted.
+You cannot recover it again.
+
+</p>
+
+</div>
+
+<form method="POST">
+
+<button type="submit"
+style="
+background:linear-gradient(135deg,#ef4444,#dc2626);
+margin-top:30px;
+">
+
+<i class="fa-solid fa-trash-can"></i>
+
+Delete Permanently
+
+</button>
+
+</form>
+
+<div class="center">
+
+<a href="/dashboard">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Cancel And Go Back
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

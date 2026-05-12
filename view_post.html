@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>View Post</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div style="width:100%;">
+
+<!-- POST SECTION -->
+
+<div class="post-card">
+
+<h1 style="color:#2563eb; margin-bottom:20px;">
+
+<i class="fa-solid fa-book-open"></i>
+
+{{ post[1] }}
+
+</h1>
+
+<p style="font-size:18px; line-height:1.8;">
+
+{{ post[2] }}
+
+</p>
+
+<hr style="margin:20px 0;">
+
+<p>
+
+<i class="fa-solid fa-user"></i>
+
+Author : {{ post[4] }}
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-calendar"></i>
+
+{{ post[3] }}
+
+</p>
+
+</div>
+
+<!-- COMMENT SECTION -->
+
+<div class="container">
+
+<h1 style="font-size:28px;">
+
+<i class="fa-solid fa-comments"></i>
+
+Comments
+
+</h1>
+
+<!-- COMMENT LIST -->
+
+{% for comment in comments %}
+
+<div class="comment-box">
+
+<p>
+
+<i class="fa-solid fa-user-circle"></i>
+
+<b>{{ comment[2] }}</b>
+
+</p>
+
+<p style="margin-top:10px;">
+
+{{ comment[0] }}
+
+</p>
+
+<p style="margin-top:10px; color:gray;">
+
+<i class="fa-solid fa-clock"></i>
+
+{{ comment[1] }}
+
+</p>
+
+</div>
+
+{% endfor %}
+
+<!-- ADD COMMENT -->
+
+<form method="POST">
+
+<div class="input-box">
+
+<textarea
+name="comment"
+rows="5"
+placeholder="Write your comment..."
+required></textarea>
+
+</div>
+
+<button type="submit">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Add Comment
+
+</button>
+
+</form>
+
+<!-- BACK -->
+
+<div class="center">
+
+<a href="/dashboard">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back To Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

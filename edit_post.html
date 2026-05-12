@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Edit Post</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+Edit Post
+
+</h1>
+
+<form method="POST">
+
+<!-- TITLE -->
+
+<div class="input-box">
+
+<i class="fa-solid fa-heading"></i>
+
+<input type="text"
+name="title"
+value="{{ post[1] }}"
+placeholder="Enter Post Title"
+required>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="input-box">
+
+<textarea
+name="content"
+rows="8"
+placeholder="Update your blog content..."
+required>{{ post[2] }}</textarea>
+
+</div>
+
+<!-- UPDATE BUTTON -->
+
+<button type="submit">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Update Post
+
+</button>
+
+</form>
+
+<!-- BACK BUTTON -->
+
+<div class="center">
+
+<a href="/dashboard">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back To Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
